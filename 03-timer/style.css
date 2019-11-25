@@ -1,0 +1,40 @@
+.dial {
+  height: 400px;
+  width: 400px;
+}
+
+.timer {
+  position: relative;
+  display: inline-block;
+}
+
+* {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background-color: white;
+  font-size: 2rem;
+  outline: none;
+}
+
+input {
+  font-size: 3rem;
+  outline: none;
+  border: none;
+  text-align: center;
+  width: 150px;
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
