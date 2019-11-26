@@ -115,4 +115,13 @@ const stepThroughCell = (row, column) => {
 };
 
 stepThroughCell(startRow, startColumn);
-// console.log(grid);
+
+horizontals.forEach(row => {
+  row.forEach(open => {
+    if (open) {
+      return;
+    }
+
+    const wall = Bodies.rectangle();
+  });
+});
