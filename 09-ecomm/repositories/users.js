@@ -15,22 +15,25 @@ class UserRepository {
   }
 
   async getAll() {
-    // open file named this.filename
-    const contents = await fs.promises.readFile(this.filename, {
-      encoding: "utf-8"
-    });
+    return JSON.parse(
+      await fs.promises.readFile(this.filename, {
+        encoding: "utf-8"
+      })
+    );
+  }
 
-    // read file contents
-
-    // parse contents
-
-    // return parsed data
+  async create(attrs) {
+    const records = await this.getAll();
+    records.push(attrs);
+    await fs.promises.writeFile(this.filename, JSON.stringify(records));
   }
 }
 
 const test = async () => {
   const repo = new UserRepository("users.json");
-  await repo.getAll();
+  await repo.create({ email: "test@test.com", password: "password" });
+  const users = await repo.getAll();
+  console.log(users);
 };
 
 test();
