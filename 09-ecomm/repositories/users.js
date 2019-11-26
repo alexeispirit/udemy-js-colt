@@ -45,14 +45,22 @@ class UserRepository {
     const records = await this.getAll();
     return records.find(record => record.id === id);
   }
+
+  async delete(id) {
+    const records = await this.getAll();
+    const filteredRecords = records.filter(record => record.id !== id);
+    await this.writeAll(filteredRecords);
+  }
 }
 
 const test = async () => {
   const repo = new UserRepository("users.json");
   // await repo.create({ email: "test@test.com", password: "password" });
   // const users = await repo.getAll();
-  const users = await repo.getOne("03b132d8");
-  console.log(users);
+  // const users = await repo.getOne("03b132d8");
+  await repo.delete("03b132d8");
+
+  // console.log(users);
 };
 
 test();
