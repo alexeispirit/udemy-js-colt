@@ -165,11 +165,28 @@ const goal = Bodies.rectangle(
   unitLength * 0.7,
   { isStatic: true }
 );
-
 World.add(world, goal);
 
 // Ball
 
 const ball = Bodies.circle(unitLength / 2, unitLength / 2, unitLength * 0.25);
-
 World.add(world, ball);
+
+document.addEventListener("keydown", event => {
+  if (event.keyCode === 87) {
+    // w
+    console.log("move up");
+  }
+  if (event.keyCode === 68) {
+    // d
+    console.log("move right");
+  }
+  if (event.keyCode === 83) {
+    // s
+    console.log("move down");
+  }
+  if (event.keyCode === 65) {
+    // a
+    console.log("move left");
+  }
+});
