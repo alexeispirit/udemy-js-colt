@@ -42,3 +42,19 @@ const verticals = Array(cells)
 const horizontals = Array(cells - 1)
   .fill(null)
   .map(() => Array(cells).fill(false));
+
+const startRow = Math.floor(Math.random() * cells);
+const startColumn = Math.floor(Math.random() * cells);
+
+const stepThroughCell = (row, column) => {
+  // if i have visited the cell at [row, column], then return
+  // mark this cell as being visited
+  // assemble randomly-ordered list of neighbours
+  // for each neighbor...
+  // see if that neighbor is out of bounds
+  // if we have visited that neighbor, continue to next neighbor
+  // remove a wall from either horizontals or verticals
+  // visit that next cell
+};
+
+stepThroughCell(startRow, startColumn);
