@@ -94,7 +94,7 @@ const stepThroughCell = (row, column) => {
     }
 
     // if we have visited that neighbor, continue to next neighbor
-    if (grid[(nextRow, nextColumn)]) {
+    if (grid[nextRow][nextColumn]) {
       continue;
     }
 
@@ -108,9 +108,11 @@ const stepThroughCell = (row, column) => {
     } else if (direction === "down") {
       horizontals[row][column] = true;
     }
+
+    // visit that next cell
+    stepThroughCell(nextRow, nextColumn);
   }
-  // visit that next cell
 };
 
 stepThroughCell(startRow, startColumn);
-console.log(grid);
+// console.log(grid);
