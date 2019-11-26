@@ -2,16 +2,21 @@
 // use npm link to link
 
 const fs = require("fs");
+const path = require("path");
 const chalk = require("chalk");
 
 const { lstat } = fs.promises;
 
-fs.readdir(process.cwd(), async (err, filenames) => {
+const targetDir = process.argv[2] || process.cwd();
+
+fs.readdir(targetDir, async (err, filenames) => {
   if (err) {
     console.log(err);
   }
 
-  const statPromises = filenames.map(filename => lstat(filename));
+  const statPromises = filenames.map(filename =>
+    lstat(path.join(targetDir, filename))
+  );
 
   const allStats = await Promise.all(statPromises);
 
