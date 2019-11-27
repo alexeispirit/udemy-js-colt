@@ -16,5 +16,5 @@ app.use(
 app.use(authRouter);
 
 app.listen(3000, () => {
-  console.log("listening");
+  console.log("server listening");
 });
