@@ -3,5 +3,10 @@
     "email": "admin@natours.io",
     "password": "123",
     "id": "0630cee5"
+  },
+  {
+    "email": "admin@natours.ru",
+    "password": "b70448bd36e38bcdf4a2fda054d5c4ad859010a8c83ff038ecbac44dd2566d76d3526bc76b5d084685f47404dc3c6d762c305568a8bfb745ef01a0171fbd28aa.e15501610cf2b168",
+    "id": "7168ccec"
   }
 ]
