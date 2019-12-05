@@ -14,4 +14,6 @@ it("shows an autocomplete", () => {
   });
 
   const dropdown = document.querySelector(".dropdown");
+
+  expect(dropdown.className).not.to.include("is-active");
 });
