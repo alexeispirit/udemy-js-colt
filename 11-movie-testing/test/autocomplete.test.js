@@ -32,7 +32,11 @@ beforeEach(() => {
   });
 });
 
-it("dropdown starts closed", () => {});
+it("dropdown starts closed", () => {
+  const dropdown = document.querySelector(".dropdown");
+
+  expect(dropdown.className).not.to.include("is-active");
+});
 
 it("after searching dropdown opens up", async () => {
   const input = document.querySelector("input");
@@ -44,4 +48,16 @@ it("after searching dropdown opens up", async () => {
   const dropdown = document.querySelector(".dropdown");
 
   expect(dropdown.className).to.include("is-active");
+});
+
+it("after searching displays some results", async () => {
+  const input = document.querySelector("input");
+  input.value = "avengers";
+  input.dispatchEvent(new Event("input"));
+
+  await waitFor(".dropdown-item");
+
+  const items = document.querySelectorAll(".dropdown-item");
+
+  expect(items.length).to.equal(3);
 });
