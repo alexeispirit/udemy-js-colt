@@ -12,4 +12,6 @@ it("shows an autocomplete", () => {
       return movie.Title;
     }
   });
+
+  const dropdown = document.querySelector(".dropdown");
 });
